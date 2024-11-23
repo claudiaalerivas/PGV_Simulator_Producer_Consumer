@@ -17,7 +17,7 @@ public class Consumer extends Thread{
     System.out.println("Cuantas verduras quieres comprar?");
         System.out.println("Ingrese nombre de la verdura a comprar:");
         String vegetable = scanner.nextLine();
-        this.wareHouse.addVegetable(vegetable);
+        this.wareHouse.removeVegetable(vegetable);
     super.run();
   }
 }
