@@ -1,6 +1,5 @@
 package com.stardewvalley.threads;
 
-import java.util.Scanner;
 
 import com.stardewvalley.elements.Restaurant;
 
