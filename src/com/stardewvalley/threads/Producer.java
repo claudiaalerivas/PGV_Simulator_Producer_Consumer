@@ -1,6 +1,6 @@
 package com.stardewvalley.threads;
 
-import com.stardewvalley.manager.Restaurant;
+import com.stardewvalley.elements.Restaurant;
 
 public class Producer extends Thread {
   private Restaurant warehouse;

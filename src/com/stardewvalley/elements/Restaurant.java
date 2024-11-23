@@ -1,4 +1,4 @@
-package com.stardewvalley.manager;
+package com.stardewvalley.elements;
 
 import java.util.ArrayList;
 import java.util.List;
