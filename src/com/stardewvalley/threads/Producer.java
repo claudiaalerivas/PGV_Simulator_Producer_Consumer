@@ -1,5 +1,5 @@
 package com.stardewvalley.threads;
-
+import com.stardewvalley.manager.WareHouse;
 import java.util.Scanner;
 
 public class Producer extends Thread{
