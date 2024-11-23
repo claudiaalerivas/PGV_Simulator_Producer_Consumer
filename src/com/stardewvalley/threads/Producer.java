@@ -1,30 +1,42 @@
 package com.stardewvalley.threads;
-import com.stardewvalley.manager.WareHouse;
-import java.util.Scanner;
 
-public class Producer extends Thread{
-  private static Scanner scanner = new Scanner(System.in);
-  private WareHouse wareHouse;
-  private int timeGrowth = 2000;
+import com.stardewvalley.manager.Restaurant;
 
-  public Producer(WareHouse wareHouse) {
-    this.wareHouse = wareHouse;
+public class Producer extends Thread {
+  private Restaurant warehouse;
+  private int vegetablesToPlant;
+  private String farmerName;
+  private final int MAX_GROWTH_TIME = 5000;
+
+  private String[] vegetableList = { "lettuce", "cabbage", "onion", "spinach", "potato", "celery", "asparagus",
+      "radish", "broccoli", "artichoke", "tomato", "cucumber", "eggplant", "carrot", "green bean" };
+
+  public Producer(String farmerName, int vegetablesToPlant, Restaurant warehouse) {
+    this.farmerName = farmerName;
+    this.vegetablesToPlant = vegetablesToPlant;
+    this.warehouse = warehouse;
   }
 
-  @Override
+  private int growTime() {
+    int growTime = (int) Math.floor(Math.random() * MAX_GROWTH_TIME) + 1000;
+    return growTime > MAX_GROWTH_TIME ? MAX_GROWTH_TIME : growTime;
+  }
+
+  public String getVegetable() {
+    return vegetableList[(int) (Math.random() * vegetableList.length)];
+  }
+
   public void run() {
-    System.out.println("Cuantas verduras quieres sembrar?");
-    int numVegetables = scanner.nextInt();
     try {
-      for (int i = 0; i < numVegetables; i++) {
-        System.out.println("Ingrese nombre de la verdura a sembrar:");
-        String vegetable = scanner.nextLine();
-        Thread.sleep(timeGrowth);
-        this.wareHouse.removeVegetable(vegetable);
+      for (int i = 0; i < vegetablesToPlant; i++) {
+        String vegetal = getVegetable();
+        System.out.println(farmerName + " ha plantado un/a rico/a " + vegetal);
+        Thread.sleep(growTime());
+        System.out.println("El/la " + vegetal + " ha crecido");
+        warehouse.addVegetable(vegetal);
       }
-    } catch (InterruptedException e) {
-      System.out.println("No se respeto el tiempo de crecimiento, intente de nuevo");
+    } catch (Exception e) {
+      e.printStackTrace();
     }
-    super.run();
   }
 }
