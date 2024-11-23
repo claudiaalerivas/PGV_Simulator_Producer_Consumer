@@ -27,7 +27,18 @@ public class Restaurant {
     }
   }
 
-  public synchronized void removeVegetable(String vegetable) {
-    this.warehouse.remove(vegetable);
+  public synchronized void removeVegetable(String consumerName) {
+    try {
+      while (this.warehouse.isEmpty()) {
+        System.out.println("No hay vegetales para consumir, espere un momentico :D");
+        wait();
+      }
+      String vegetalConsumed = this.warehouse.remove(0);
+      System.out.println("El consumidor: " + consumerName + ", ha consumido: " + vegetalConsumed);
+
+      notifyAll();
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
   }
 }
