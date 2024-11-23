@@ -4,11 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Restaurant {
-  private List<String> warehouse = new ArrayList<>();
+  private List<String> warehouse;
   private String name;
 
   public Restaurant(String name) {
     this.name = name;
+    this.warehouse = new ArrayList<>(); 
+  }
+
+  public String getName() {
+    return name;
   }
 
   public synchronized void addVegetable(String vegetable) {
