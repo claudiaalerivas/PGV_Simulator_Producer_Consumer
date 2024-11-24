@@ -6,10 +6,12 @@ import java.util.List;
 public class Restaurant {
   private List<String> warehouse;
   private String name;
+  private int warehouseSize;
 
-  public Restaurant(String name) {
+  public Restaurant(String name, int warehouseSize) {
     this.name = name;
     this.warehouse = new ArrayList<>();
+    this.warehouseSize = warehouseSize;
   }
 
   public String getName() {
@@ -18,7 +20,7 @@ public class Restaurant {
 
   public synchronized void addVegetable(String vegetable) {
     try {
-      while (warehouse.size() >= 10) {
+      while (warehouse.size() >= this.warehouseSize) {
         System.out.println("El almacén esta llenito.");
         wait();
       }

@@ -4,7 +4,7 @@ import com.stardewvalley.threads.Producer;
 
 public class App {
   public static void main(String[] args) throws Exception {
-    Restaurant restaurant = new Restaurant("La huerta");
+    Restaurant restaurant = new Restaurant("La huerta", 10);
 
     System.out.println("----" + restaurant.getName().toUpperCase() + "----");
 
