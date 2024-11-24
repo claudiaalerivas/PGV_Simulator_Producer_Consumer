@@ -1,6 +1,5 @@
 package com.stardewvalley.threads;
 
-
 import com.stardewvalley.elements.Restaurant;
 
 public class Consumer extends Thread {
@@ -8,8 +7,7 @@ public class Consumer extends Thread {
   private String consumerName = "";
   private int vegetableQuantity;
   private Restaurant wareHouse;
-  private final int MAX_GROWTH_TIME = 2000; 
-
+  private final int MAX_CONSUME_TIME = 6000;
 
   public Consumer(String consumerName, int vegetableQuantity, Restaurant wareHouse) {
     this.consumerName = consumerName;
@@ -18,8 +16,8 @@ public class Consumer extends Thread {
   }
 
   private int consumeTime() {
-    int consumeTime = (int) Math.floor(Math.random() * MAX_GROWTH_TIME) + 1000;
-    return consumeTime > MAX_GROWTH_TIME ? MAX_GROWTH_TIME : consumeTime;
+    int consumeTime = (int) Math.floor(Math.random() * MAX_CONSUME_TIME) + 1000;
+    return consumeTime > MAX_CONSUME_TIME ? MAX_CONSUME_TIME : consumeTime;
   }
 
   public String getConsumerName() {
