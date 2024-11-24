@@ -9,7 +9,7 @@ public class Restaurant {
 
   public Restaurant(String name) {
     this.name = name;
-    this.warehouse = new ArrayList<>(); 
+    this.warehouse = new ArrayList<>();
   }
 
   public String getName() {
@@ -18,7 +18,7 @@ public class Restaurant {
 
   public synchronized void addVegetable(String vegetable) {
     try {
-      while (warehouse.size() >= 20) {
+      while (warehouse.size() >= 10) {
         System.out.println("El almacén esta llenito.");
         wait();
       }
