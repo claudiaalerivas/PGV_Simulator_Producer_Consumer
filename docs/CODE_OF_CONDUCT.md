@@ -146,7 +146,7 @@ Esta hilo es el responsable de producir los vegetales y una vez que hayan crecid
 ## Atributos
 
 - **warehouse**
-  > Lista de vegetales que se encuentran en el almacén
+  > Objeto de tipo Restaurant que representa el almacén
 - **vegetablesToPlant**
   > Número de vegetales que se van a plantar
 - **farmerName**
