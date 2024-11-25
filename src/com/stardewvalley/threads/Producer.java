@@ -6,7 +6,7 @@ public class Producer extends Thread {
   private Restaurant warehouse;
   private int vegetablesToPlant;
   private String farmerName;
-  private final int MAX_GROWTH_TIME = 5000;
+  private final int MAX_GROWTH_TIME = 2000;
 
   private String[] vegetableList = { "lettuce", "cabbage", "onion", "spinach", "potato", "celery", "asparagus",
       "radish", "broccoli", "artichoke", "tomato", "cucumber", "eggplant", "carrot", "green bean" };
