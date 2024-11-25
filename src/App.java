@@ -8,13 +8,13 @@ public class App {
 
     System.out.println("----" + restaurant.getName().toUpperCase() + "----");
 
-    Producer producer = new Producer("Paco", 10, restaurant);
-    Producer producer2 = new Producer("Ramon", 10, restaurant);
-    Producer producer3 = new Producer("APOWJAIODJWA", 10, restaurant);
-    Producer producer4 = new Producer("we", 10, restaurant);
-    Consumer consumer = new Consumer("Faustino", 10, restaurant);
-    Consumer consumer2 = new Consumer("Mr.Gentleman", 10, restaurant);
-    Consumer consumer3 = new Consumer("Loquendo", 20, restaurant);
+    Producer producer = new Producer("Paco(Granjero)", 10, restaurant);
+    Producer producer2 = new Producer("Ramon(Granjero)", 10, restaurant);
+    Producer producer3 = new Producer("Kevin(Cliente)", 10, restaurant);
+    Producer producer4 = new Producer("Xiao(Cliente)", 10, restaurant);
+    Consumer consumer = new Consumer("Faustino(Cliente)", 10, restaurant);
+    Consumer consumer2 = new Consumer("Mr.Gentleman(Cliente)", 10, restaurant);
+    Consumer consumer3 = new Consumer("Loquendo(Cliente)", 20, restaurant);
     producer.start();
     producer2.start();
     producer3.start();
